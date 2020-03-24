@@ -12,6 +12,7 @@ class Node
   public:
     Node(std::string name);
     std::string getName();
+    void setName(std::string name);
 };
 
 #endif

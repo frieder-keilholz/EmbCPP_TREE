@@ -11,4 +11,8 @@ Node::Node(std::string nameIn) {
 std::string Node::getName()
 {
   return name;
-}
+};
+
+void Node::setName(std::string nameIn){
+  name = nameIn;
+};
