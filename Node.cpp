@@ -4,15 +4,22 @@
 #include <string>
 #include <vector>
 
-Node::Node(std::string nameIn) {
+using namespace std;
+
+Node::Node(string nameIn) {
   name = nameIn;
 };
 
-std::string Node::getName()
+void Node::deleteChilds(){
+  
+}
+
+string Node::getName()
 {
   return name;
 };
 
-void Node::setName(std::string nameIn){
+void Node::setName(string nameIn){
   name = nameIn;
 };
+

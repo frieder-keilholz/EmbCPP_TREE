@@ -8,9 +8,10 @@ class Node
 {
   private:
     std::string name;
-    
+    std::vector<Node> children;
   public:
     Node(std::string name);
+    void deleteChilds();
     std::string getName();
     void setName(std::string name);
 };
