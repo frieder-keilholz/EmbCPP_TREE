@@ -1,0 +1,14 @@
+EmbCPP_TREE Notizen
+
+> Node
+ > Funktionen
+  - Konstruktor (Erstellen des Nodes) [string Inhalt]
+  - Löschen (Alle Kindknoten)
+  - Ausgabe Name des Knotens
+  - Setzen Name des Knotens
+  - Ausgabe Anzahl der Kinder
+  - Ausgabe Kind-Knoten i
+  - Einfügen eines Kind-Knotens
+
+Hinweise:
+  - Speichern von Kind-Knoten muss in Vector-Instanzen geschehen
