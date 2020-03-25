@@ -15,5 +15,13 @@ int main()
   node->setName("Und ich heiße jetzt anders :]");
   
   cout << node->getName() << endl;
+
+  Node *child1 = new Node("Im child 1");
+  Node *child2 = new Node("Im child 2");
+  child1->addChild(*child2);
+  node->addChild(*child1);
+
+  delete node;
+
   return 0;
 }

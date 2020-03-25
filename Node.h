@@ -11,9 +11,13 @@ class Node
     std::vector<Node> children;
   public:
     Node(std::string name);
-    void deleteChilds();
+    ~Node();
+
     std::string getName();
     void setName(std::string name);
+    int numOfChilds();
+    Node& getChild(int i);
+    void addChild(Node child);
 };
 
 #endif
