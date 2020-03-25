@@ -11,16 +11,18 @@ Node::Node(string nameIn) {
 };
 
 Node::~Node(){
-  cout << "Delete Node all children." << this->getName() << endl;
+  cout << "Delete Node " << this->getName() << endl;
   /*
   for (vector<Node>::iterator i = children.begin(); i != children.end(); ++i)
   {
     cout << i->getName() << endl;
   }
   */
+ /*
  if(this->numOfChilds()){
   delete &children[0];
  }
+ */
 };
 
 string Node::getName()
@@ -37,11 +39,11 @@ int Node::numOfChilds(){
 }
 
 Node& Node::getChild(int i){
-  if(i < this->numOfChilds()){
+  //if(i < this->numOfChilds()){
     return children[i];
-  }else{
-    return NULL;
-  }
+  //}else{
+  //  return ;
+  //}
 };
 
 void Node::addChild(Node child){
