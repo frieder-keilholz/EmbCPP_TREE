@@ -11,7 +11,10 @@
 
 using namespace std;
 
-Node::Node(const string* nameIn ) {
+int Node::id = 0;
+
+Node::Node(const string* nameIn) {
+  Node::id++;
   name = *nameIn;
   #ifdef DEBUG
   cout << "New node created: " << this->name << endl;
@@ -19,13 +22,16 @@ Node::Node(const string* nameIn ) {
 };
 
 Node::~Node(){
-  cout << "Delete Node " << this->getName() << " Number of childs: " << this->getNrOfChildren() << endl;
+  //cout << "Delete Node " << this->getName() << " Number of childs: " << this->getNrOfChildren() << endl;
   #ifdef DEBUG
   cout << "enter ~node() of " << this->name << endl;
   #endif
   for(int i = 0; i < this->getNrOfChildren();  i++){
     delete children[i];
   }
+  #ifdef DEBUG
+  cout << "leave ~node() of " << this->name << endl;
+  #endif
 };
 
 string Node::getName() const

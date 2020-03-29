@@ -7,16 +7,16 @@ using namespace std;
 
 int main(void)
 {
-  cout << "Hello World!" << endl << "Klasse bauen: ";
+  //cout << "Hello World!" << endl << "Klasse bauen: ";
   string name = "Node 1";
   Node *node = new Node(&name);
 
-  cout << node->getName() << endl;
+  //cout << node->getName() << endl;
   
-  name = "Node 1 :-)";
-  node->setName(&name);
+  //name = "Node 1 :-)";
+  //node->setName(&name);
   
-  cout << node->getName() << endl;
+  //cout << node->getName() << endl;
 
   name = "Node 2";
   Node *child1 = new Node(&name);
