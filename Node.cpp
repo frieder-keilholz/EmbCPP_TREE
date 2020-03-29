@@ -15,7 +15,6 @@ int Node::id = 0;
 
 Node::Node(const string* nameIn) {
   Node::id++;
-  name = *nameIn;
   #ifdef DEBUG
   cout << "New node created: " << this->name << endl;
   #endif
