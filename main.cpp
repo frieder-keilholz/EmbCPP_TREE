@@ -18,8 +18,8 @@ int main()
 
   Node *child1 = new Node("Im child 1");
   Node *child2 = new Node("Im child 2");
-  child1->addChild(*child2);
-  node->addChild(*child1);
+  child1->addChild(child2);
+  node->addChild(child1);
 
   delete node;
 

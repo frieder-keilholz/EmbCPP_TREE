@@ -8,7 +8,7 @@ class Node
 {
   private:
     std::string name;
-    std::vector<Node> children;
+    std::vector<Node*> children;
   public:
     Node(std::string name);
     ~Node();
@@ -16,8 +16,8 @@ class Node
     std::string getName();
     void setName(std::string name);
     int numOfChilds();
-    Node& getChild(int i);
-    void addChild(Node child);
+    Node* getChild(int i);
+    void addChild(Node* child);
 };
 
 #endif

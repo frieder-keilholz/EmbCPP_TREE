@@ -12,12 +12,9 @@ Node::Node(string nameIn) {
 
 Node::~Node(){
   cout << "Delete Node " << this->getName() << endl;
-  /*
-  for (vector<Node>::iterator i = children.begin(); i != children.end(); ++i)
-  {
-    cout << i->getName() << endl;
-  }
-  */
+  
+  
+  
  /*
  if(this->numOfChilds()){
   delete &children[0];
@@ -38,7 +35,7 @@ int Node::numOfChilds(){
   return children.size();
 }
 
-Node& Node::getChild(int i){
+Node* Node::getChild(int i){
   //if(i < this->numOfChilds()){
     return children[i];
   //}else{
@@ -46,6 +43,6 @@ Node& Node::getChild(int i){
   //}
 };
 
-void Node::addChild(Node child){
+void Node::addChild(Node* child){
   children.push_back(child);
 }
