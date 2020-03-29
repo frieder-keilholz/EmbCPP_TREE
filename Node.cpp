@@ -13,23 +13,18 @@
 
 using namespace std;
 
-Node::Node(string* nameIn) {
+Node::Node(const string* nameIn ) {
   name = *nameIn;
 };
 
 Node::~Node(){
   cout << "Delete Node " << this->getName() << " Number of childs: " << this->numOfChilds() << endl;
-  for(int i = 0; i < this->numOfChilds();  i++){
+  for(int i = 0; i < this->getNrOfChildren();  i++){
     delete children[i];
   }
- /*
- if(this->numOfChilds()){
-  delete &children[0];
- }
- */
 };
 
-string Node::getName()
+string Node::getName() const
 {
   return name;
 };
@@ -38,16 +33,16 @@ void Node::setName(string* nameIn){
   name = *nameIn;
 };
 
-int Node::numOfChilds(){
+int Node::getNrOfChildren() const{
   return children.size();
 }
 
-Node* Node::getChild(int i){
-  //if(i < this->numOfChilds()){
+Node* Node::getChild(int i) const{
+  if(i < this->getNrOfChildren()){
     return children[i];
-  //}else{
-  //  return ;
-  //}
+  }else{
+    return NULL;
+  }
 };
 
 void Node::addChild(Node* child){
