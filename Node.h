@@ -16,7 +16,7 @@ class Node
     std::string getName() const;
     void setName(std::string* name);
     int getNrOfChildren() const;
-    Node* getChild(int i) const;
+    Node* getChild(const int i) const;
     void addChild(Node* child);
 };
 

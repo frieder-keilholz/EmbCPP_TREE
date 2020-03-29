@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Node.h"
 
 using namespace std;
 
@@ -33,9 +34,9 @@ void Node::setName(string* nameIn){
 
 int Node::getNrOfChildren() const{
   return children.size();
-}
+};
 
-Node* Node::getChild(int i) const{
+Node* Node::getChild(const int i) const{
   if(i < this->getNrOfChildren()){
     return children[i];
   }else{
@@ -45,4 +46,4 @@ Node* Node::getChild(int i) const{
 
 void Node::addChild(Node* child){
   children.push_back(child);
-}
+};

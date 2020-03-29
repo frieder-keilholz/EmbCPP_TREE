@@ -1,9 +1,11 @@
 #include <iostream>
+#include <string>
 #include <vector>
+#include "Node.h"
 
 using namespace std;
 
-int main()
+int main(void)
 {
   cout << "Hello World!" << endl << "Klasse bauen: ";
   string name = "Node 1";
