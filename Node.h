@@ -10,11 +10,11 @@ class Node
     std::string name;
     std::vector<Node*> children;
   public:
-    Node(std::string name);
+    Node(const std::string* name);
     ~Node();
 
     std::string getName();
-    void setName(std::string name);
+    void setName(std::string* name);
     int numOfChilds();
     Node* getChild(int i);
     void addChild(Node* child);

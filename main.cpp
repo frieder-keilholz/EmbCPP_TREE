@@ -7,17 +7,21 @@ using namespace std;
 
 int main()
 {
-  cout << "Hello World!" << endl << "Classe bauen:";
-  Node *node = new Node("Node 1");
+  cout << "Hello World!" << endl << "Klasse bauen: ";
+  string name = "Node 1";
+  Node *node = new Node(&name);
 
   cout << node->getName() << endl;
   
-  node->setName("Node 1 :)");
+  name = "Node 1 :-)";
+  node->setName(&name);
   
   cout << node->getName() << endl;
 
-  Node *child1 = new Node("Node 2");
-  Node *child2 = new Node("Node 3");
+  name = "Node 2";
+  Node *child1 = new Node(&name);
+  name = "Node 3";
+  Node *child2 = new Node(&name);
   child1->addChild(child2);
   node->addChild(child1);
 

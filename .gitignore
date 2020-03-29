@@ -33,3 +33,5 @@
 
 # VS Code files
 settings.json
+*.json
+.vscode

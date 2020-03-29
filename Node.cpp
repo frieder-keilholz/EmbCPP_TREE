@@ -1,3 +1,10 @@
+/**
+ * @file    Node.cpp
+ * @author  Frieder Keilholz
+ * @date    29.03.2020
+ * @brief   
+*/
+
 #include "Node.h"
 
 #include <iostream>
@@ -6,15 +13,15 @@
 
 using namespace std;
 
-Node::Node(string nameIn) {
-  name = nameIn;
+Node::Node(string* nameIn) {
+  name = *nameIn;
 };
 
 Node::~Node(){
-  cout << "Delete Node " << this->getName() << endl;
-  
-  
-  
+  cout << "Delete Node " << this->getName() << " Number of childs: " << this->numOfChilds() << endl;
+  for(int i = 0; i < this->numOfChilds();  i++){
+    delete children[i];
+  }
  /*
  if(this->numOfChilds()){
   delete &children[0];
@@ -27,8 +34,8 @@ string Node::getName()
   return name;
 };
 
-void Node::setName(string nameIn){
-  name = nameIn;
+void Node::setName(string* nameIn){
+  name = *nameIn;
 };
 
 int Node::numOfChilds(){
