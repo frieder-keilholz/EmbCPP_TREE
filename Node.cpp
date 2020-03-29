@@ -18,7 +18,7 @@ Node::Node(const string* nameIn ) {
 };
 
 Node::~Node(){
-  cout << "Delete Node " << this->getName() << " Number of childs: " << this->numOfChilds() << endl;
+  cout << "Delete Node " << this->getName() << " Number of childs: " << this->getNrOfChildren() << endl;
   for(int i = 0; i < this->getNrOfChildren();  i++){
     delete children[i];
   }
