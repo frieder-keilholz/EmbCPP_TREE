@@ -1,6 +1,9 @@
-#ifndef Node_h
-#define Node_h
+#ifndef Node_H
+#define Node_H
 
+#define DEBUG
+
+#include <iostream>
 #include <string>
 #include <vector>
 

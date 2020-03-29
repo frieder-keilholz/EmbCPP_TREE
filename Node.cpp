@@ -4,7 +4,7 @@
  * @date    29.03.2020
  * @brief   
 */
-
+#include "Node.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -13,10 +13,16 @@ using namespace std;
 
 Node::Node(const string* nameIn ) {
   name = *nameIn;
+  #ifdef DEBUG
+  cout << "New node created: " << this->name << endl;
+  #endif
 };
 
 Node::~Node(){
   cout << "Delete Node " << this->getName() << " Number of childs: " << this->getNrOfChildren() << endl;
+  #ifdef DEBUG
+  cout << "enter ~node() of " << this->name << endl;
+  #endif
   for(int i = 0; i < this->getNrOfChildren();  i++){
     delete children[i];
   }
