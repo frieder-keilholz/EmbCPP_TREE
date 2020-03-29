@@ -3,17 +3,27 @@
  * @author  Frieder Keilholz
  * @date    29.03.2020
  * @brief   
-*/
+**/
 #include "Node.h"
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <vector>
 
 using namespace std;
 
-int Node::id = 0;
+int Node::id = 1;
 
-Node::Node(const string* nameIn) {
+Node::Node(const string* nameIn) {  
+  if(*nameIn == "")
+  {
+    std::stringstream strSm;
+    strSm << "node_" << Node::id;
+    name = strSm.str();
+  }else
+  {
+    name = *nameIn;  
+  }
   Node::id++;
   #ifdef DEBUG
   cout << "New node created: " << this->name << endl;
