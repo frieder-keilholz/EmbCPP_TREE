@@ -10,6 +10,7 @@ int main()
     Node* root = new Node(&name);
     name = "";
     /*
+    name = "left child Node";
     Node* left_child = new Node(&name);
     root->addChild(left_child);
     //name = "right child Node";
