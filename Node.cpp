@@ -104,7 +104,15 @@ Node* Node::createCompleteTree(int nrChildNodes, int treeDepth)
   return this;
 };
 
-void print(std::ostream &str, int depth)
+void Node::print(std::ostream &str, int depth)
 {
-
+  string spacing = "";
+  for(int i = 0; i < depth; i++){
+    str << "  ";
+  }
+  str << this->getName() << endl;
+  for(int i = 0; i < this->getNrOfChildren();i++)
+  {
+    this->getChild(i)->print(str, depth+1);
+  }
 };

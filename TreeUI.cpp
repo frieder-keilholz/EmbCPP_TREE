@@ -23,6 +23,7 @@ int main()
     }catch (const char* msg){
         cout << "An error occured: " << msg << endl;
     }
+    root->print(cout, 0);
     //std::cout << "Ich hab dich lieb <3"<< std::endl;
     delete root;
     return 0;
