@@ -14,6 +14,7 @@ class Node
     std::string name;
     std::vector<Node*> children;
   public:
+    Node();
     Node(const std::string* name);
     ~Node();
 
@@ -22,6 +23,8 @@ class Node
     int getNrOfChildren() const;
     Node* getChild(const int i) const;
     void addChild(Node* child);
+    Node* createCompleteTree(int nrChildNodes, int treeDepth);
+    void print(std::ostream &str, int depth);
 };
 
 #endif
