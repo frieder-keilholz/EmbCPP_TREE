@@ -9,7 +9,6 @@ int main()
     std::string name = "root Node";
     Node* root = new Node(&name);
     name = "";
-    //name = "left child Node";
     /*
     Node* left_child = new Node(&name);
     root->addChild(left_child);
