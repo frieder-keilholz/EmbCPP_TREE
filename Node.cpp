@@ -116,3 +116,9 @@ void Node::print(std::ostream &str, int depth)
     this->getChild(i)->print(str, depth+1);
   }
 };
+
+ostream& operator<<(ostream& os, Node& node)
+{
+  node.print(os, 0);
+  return os;
+};

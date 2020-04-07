@@ -7,6 +7,8 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 class Node
 {
   private:
@@ -25,6 +27,7 @@ class Node
     void addChild(Node* child);
     Node* createCompleteTree(int nrChildNodes, int treeDepth);
     void print(std::ostream &str, int depth);
+    friend ostream& operator<<(ostream& os, Node& node);
 };
 
 #endif
