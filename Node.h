@@ -16,7 +16,6 @@ class Node
     std::string name;
     std::vector<Node*> children;
   public:
-    Node();
 
     /*  Konstruktor
         Übergabe des Namens als Referenz.
@@ -25,7 +24,7 @@ class Node
         Das spart Speicherplatz, weil kein neues Objekt oder ein
         Pointer angelegt wird.
     */
-    Node(const std::string& name);
+    Node(const std::string& name = std::string());
 
     /*  Destruktor
         Der virtualle Destruktor sorgt dafür, dass auch bei Aufruf
