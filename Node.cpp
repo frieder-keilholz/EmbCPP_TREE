@@ -1,7 +1,7 @@
 /**
   @file    Node.cpp
   @author  Frieder Keilholz
-  @date    29.03.2020
+  @date    29.03.2020 - 09.04.2020
   @brief   Implementierung der Node-Klasse
 */
 
@@ -123,6 +123,15 @@ void Node::createCompleteTree(int nrChildNodes, int treeDepth)
   }
 };
 
+/*  Gibt die Baumstruktur aus.
+    Um die Tiefe der Knoten darzustellen werden Einrückungen
+    verwendet.
+    @param  str Referenz auf Stream, auf dem Struktur 
+            ausgegeben werden soll
+    @param  depth Die Tiefe des Knotens. Wird verwendet, um
+            die Einrückungen einzufügen. 
+            (default = 0, weil Parameter gewöhnlich 0 startet)
+*/
 void Node::print(std::ostream &str, int depth) const
 {
   string spacing = "";
@@ -136,8 +145,15 @@ void Node::print(std::ostream &str, int depth) const
   }
 };
 
+/*  Überladung des << Operators.
+    @param  os  Referenz auf Outputstream, in den die 
+                Baumstruktur geschrieben wird.
+    @para   node  Node, von dem aus die Baumstruktur 
+                  ausgegeben werden soll.
+    @return Referenz auf Outputstream. (os)
+*/
 ostream& operator<<(ostream& os, Node& node)
 {
-  node.print(os, 0);
+  node.print(os);
   return os;
 };

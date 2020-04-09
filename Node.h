@@ -1,3 +1,10 @@
+/**
+  @file    Node.h
+  @author  Frieder Keilholz
+  @date    29.03.2020 - 09.04.2020
+  @brief   Definition der Node-Klasse
+*/
+
 #ifndef Node_H
 #define Node_H
 
@@ -57,7 +64,7 @@ class Node
     Node* getChild(const int i) const;
     void addChild(Node* child);
     void createCompleteTree(int nrChildNodes, int treeDepth);
-    void print(std::ostream &str, int depth) const;
+    void print(std::ostream &str, int depth = 0) const;
     friend ostream& operator<<(ostream& os, Node& node);
 };
 

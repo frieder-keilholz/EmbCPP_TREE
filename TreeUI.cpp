@@ -1,3 +1,10 @@
+/**
+  @file    TreeUI.cpp
+  @author  Frieder Keilholz
+  @date    29.03.2020 - 09.04.2020
+  @brief   Enthält main. Erstellt Bäume unter Nutzung der Node Klasse.
+*/
+
 #include "Node.h"
 #include <string>
 #include <iostream>
