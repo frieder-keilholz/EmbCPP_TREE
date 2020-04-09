@@ -6,19 +6,27 @@ using namespace std;
 
 int main()
 {
-    /* 
-    // Auskommentiert, damit die Nummerierung der Nodes in
-    // den letzten Aufgaben von 1 beginnt
-    std::string name = "root Node";
-    Node* root1 = new Node(&name);    
-    name = "left child Node";
-    Node* left_child = new Node(&name);
+    std::string name = "root";
+    Node* root1 = new Node(name);    
+    name = "left child";
+    Node* left_child = new Node(name);
     root1->addChild(left_child);
-    name = "right child Node";
-    Node* right_child = new Node(&name);
+    name = "right child";
+    Node* right_child = new Node(name);
     root1->addChild(right_child);
     delete root1;
+    /*  Die nach Aufruf des delete Operators entstehende 
+        Ausgabe zeigt das rekursive Löschen der Kindknoten.
+        Der Destruktor des root-Nodes geht alle zwei Kind-
+        knoten durch und ruft deren Destruktoren über den
+        delete Operator auf.
+        Der rekursive Abstieg endet, wenn ein Node keinen
+        Kindknoten mehr hat.
+        Erst wenn alle Kindknoten der Kindknoten des root-
+        Nodes gelöscht sind wird der Destruktor des root-
+        Nodes verlassen.
     */
+
 
     Node* root = new Node();
     try{

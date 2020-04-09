@@ -13,14 +13,15 @@
 
 using namespace std;
 
-int Node::id = 1;
+int Node::id = 0;
 
 /*  Konstruktor
-    @param nameIn Name des Nodes
+    @param nameIn Name des Nodes (default leer)
     Wird kein Name angegeben, wird er aus ID generiert
 */
-Node::Node(const string& nameIn = "")
+Node::Node(const std::string& nameIn)
 {  
+  Node::id++;
   if(nameIn == "")
   {
     std::stringstream strSm;
@@ -30,7 +31,6 @@ Node::Node(const string& nameIn = "")
   {
     name = nameIn;  
   }
-  Node::id++;
   #ifdef DEBUG
   cout << "New node created: " << this->name << endl;
   #endif
@@ -76,9 +76,9 @@ int Node::getNrOfChildren() const
   return children.size();
 };
 
-/*  Gibt den i-ten Kindknoten aus
+/*  Gibt Zeiger auf den i-ten Kindknoten aus
     @param i Index des Kindnotens
-    @return Referenz auf den Kindknoten
+    @return Zeiger auf den Kindknoten
 */
 Node* Node::getChild(const int i) const
 {
@@ -90,14 +90,22 @@ Node* Node::getChild(const int i) const
   }
 };
 
-/*  
-
+/*  Fügt dem Knoten einen Kindkoten an
+    @param  child Pointer auf das Node, welches
+                  als Kindknoten angefügt wird 
 */
 void Node::addChild(Node* child)
 {
   children.push_back(child);
 };
 
+/*  Erstellt einen Baum, ausgehend von dem Node,
+    auf dem die Methode aufgerufen wird.
+    Rekursiv wird der Baum erstellt.
+    Abbruchbedingung ist treeDepth == 1.
+    @param  nrChildNodes  Anzahl der Kindknoten pro Node
+    @param  treeDepth     Tiefe des zu erstellen Baumes
+*/
 void Node::createCompleteTree(int nrChildNodes, int treeDepth)
 {
   if(nrChildNodes < 1 || treeDepth < 1){

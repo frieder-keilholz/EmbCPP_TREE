@@ -12,7 +12,7 @@ using namespace std;
 class Node
 {
   private:
-  static int id;
+    static int id;
     std::string name;
     std::vector<Node*> children;
   public:
