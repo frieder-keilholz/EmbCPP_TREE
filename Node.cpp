@@ -15,18 +15,6 @@ using namespace std;
 
 int Node::id = 1;
 
-// Konstruktor ohne Parameter, Name wird automatisch generiert
-Node::Node()
-{
-    std::stringstream strSm;
-    strSm << "node_" << Node::id;
-    name = strSm.str();
-    Node::id++;
-    #ifdef DEBUG
-    cout << "New node created: " << this->name << endl;
-    #endif
-};
-
 /*  Konstruktor
     @param nameIn Name des Nodes
     Wird kein Name angegeben, wird er aus ID generiert
