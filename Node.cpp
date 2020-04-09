@@ -31,16 +31,16 @@ Node::Node()
     @param nameIn Name des Nodes
     Wird kein Name angegeben, wird er aus ID generiert
 */
-Node::Node(const string* nameIn)
+Node::Node(const string& nameIn = "")
 {  
-  if(*nameIn == "")
+  if(nameIn == "")
   {
     std::stringstream strSm;
     strSm << "node_" << Node::id;
     name = strSm.str();
   }else
   {
-    name = *nameIn;  
+    name = nameIn;  
   }
   Node::id++;
   #ifdef DEBUG
@@ -75,9 +75,9 @@ string Node::getName() const
 /*  Setter für den Namen
     @param nameIn Name, der gesetzt werden soll
 */
-void Node::setName(string* nameIn)
+void Node::setName(string& nameIn)
 {
-  name = *nameIn;
+  name = nameIn;
 };
 
 /*  Gibt Anzahl der Kindknoten aus
@@ -98,7 +98,7 @@ Node* Node::getChild(const int i) const
   if(i < this->getNrOfChildren() && i >= 0){
     return children[i];
   }else{
-    return NULL;
+    throw "Invalid Index of Child Node provided!";
   }
 };
 
@@ -110,7 +110,7 @@ void Node::addChild(Node* child)
   children.push_back(child);
 };
 
-Node* Node::createCompleteTree(int nrChildNodes, int treeDepth)
+void Node::createCompleteTree(int nrChildNodes, int treeDepth)
 {
   if(nrChildNodes < 1 || treeDepth < 1){
     throw "Invalid Parameter Values provided!";

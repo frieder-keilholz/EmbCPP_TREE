@@ -25,7 +25,7 @@ class Node
         Das spart Speicherplatz, weil kein neues Objekt oder ein
         Pointer angelegt wird.
     */
-    Node(const std::string* name);
+    Node(const std::string& name);
 
     /*  Destruktor
         Der virtualle Destruktor sorgt dafür, dass auch bei Aufruf
@@ -34,7 +34,7 @@ class Node
     */
     virtual ~Node();
 
-    /*  GetName
+    /*  getName
         Das Schlüsselwort 'const' macht die Funktion Read-only.
         Die Funktion GetName darf die Attribute des Objektes nur
         lesen. Als 'const' deklarierte Funktionen können von
@@ -46,11 +46,18 @@ class Node
         verhindert.
     */
     std::string getName() const;
-    void setName(std::string* name);
+    void setName(std::string& name);
     int getNrOfChildren() const;
+    /*  getChild
+        Gültige Werte sind gültige Indizes des children-vectors
+        des Objekts. Der kleinste valide Wert ist 0 (bei einem 
+        Kindknoten) und der größte die Anzahl der Kindknoten -1.
+        Wird ein ungültiger Wert angegeben, löst die Funktion
+        eine Exception aus.
+    */
     Node* getChild(const int i) const;
     void addChild(Node* child);
-    Node* createCompleteTree(int nrChildNodes, int treeDepth);
+    void createCompleteTree(int nrChildNodes, int treeDepth);
     void print(std::ostream &str, int depth) const;
     friend ostream& operator<<(ostream& os, Node& node);
 };

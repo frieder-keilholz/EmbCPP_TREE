@@ -6,13 +6,18 @@ using namespace std;
 
 int main()
 {
-    
+    /* 
+    // Auskommentiert, damit die Nummerierung der Nodes in
+    // den letzten Aufgaben von 1 beginnt
+    std::string name = "root Node";
+    Node* root1 = new Node(&name);    
     name = "left child Node";
     Node* left_child = new Node(&name);
-    root->addChild(left_child);
-    //name = "right child Node";
+    root1->addChild(left_child);
+    name = "right child Node";
     Node* right_child = new Node(&name);
-    root->addChild(right_child);
+    root1->addChild(right_child);
+    delete root1;
     */
 
     Node* root = new Node();
