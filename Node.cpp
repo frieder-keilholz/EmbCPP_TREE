@@ -1,9 +1,10 @@
 /**
- * @file    Node.cpp
- * @author  Frieder Keilholz
- * @date    29.03.2020
- * @brief   
-**/
+  @file    Node.cpp
+  @author  Frieder Keilholz
+  @date    29.03.2020
+  @brief   Implementierung der Node-Klasse
+*/
+
 #include "Node.h"
 #include <iostream>
 #include <string>
@@ -14,6 +15,7 @@ using namespace std;
 
 int Node::id = 1;
 
+// Konstruktor ohne Parameter, Name wird automatisch generiert
 Node::Node()
 {
     std::stringstream strSm;
@@ -25,6 +27,10 @@ Node::Node()
     #endif
 };
 
+/*  Konstruktor
+    @param nameIn Name des Nodes
+    Wird kein Name angegeben, wird er aus ID generiert
+*/
 Node::Node(const string* nameIn)
 {  
   if(*nameIn == "")
@@ -42,6 +48,8 @@ Node::Node(const string* nameIn)
   #endif
 };
 
+/*  Destruktor, löscht alle Kindknoten
+*/
 Node::~Node()
 {
   //cout << "Delete Node " << this->getName() << " Number of childs: " << this->getNrOfChildren() << endl;
@@ -56,30 +64,47 @@ Node::~Node()
   #endif
 };
 
+/*  Getter für Namen
+    @return Name des Nodes
+*/
 string Node::getName() const
 {
   return name;
 };
 
+/*  Setter für den Namen
+    @param nameIn Name, der gesetzt werden soll
+*/
 void Node::setName(string* nameIn)
 {
   name = *nameIn;
 };
 
+/*  Gibt Anzahl der Kindknoten aus
+    @return Anzahl Kindknoten
+*/
 int Node::getNrOfChildren() const
 {
   return children.size();
 };
 
+/*  Gibt den i-ten Kindknoten aus
+    @param i Index des Kindnotens
+    @return Referenz auf den Kindknoten
+*/
 Node* Node::getChild(const int i) const
 {
-  if(i < this->getNrOfChildren()){
+  // Prüfung, ob der Angegebene Index valide ist
+  if(i < this->getNrOfChildren() && i >= 0){
     return children[i];
   }else{
     return NULL;
   }
 };
 
+/*  
+
+*/
 void Node::addChild(Node* child)
 {
   children.push_back(child);
@@ -100,11 +125,9 @@ Node* Node::createCompleteTree(int nrChildNodes, int treeDepth)
       this->addChild(nNode);
     }
   }
-  // return this Node
-  return this;
 };
 
-void Node::print(std::ostream &str, int depth)
+void Node::print(std::ostream &str, int depth) const
 {
   string spacing = "";
   for(int i = 0; i < depth; i++){

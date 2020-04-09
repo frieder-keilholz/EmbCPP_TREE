@@ -6,10 +6,6 @@ using namespace std;
 
 int main()
 {
-    /*
-    std::string name = "root Node";
-    Node* root = new Node(&name);
-    name = "";
     
     name = "left child Node";
     Node* left_child = new Node(&name);
@@ -28,7 +24,6 @@ int main()
     }
     //root->print(cout, 0);
     cout << *root;
-    //std::cout << "Ich hab dich lieb <3"<< std::endl;
     delete root;
     return 0;
 }
